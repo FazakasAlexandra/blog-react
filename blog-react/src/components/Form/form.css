@@ -1,0 +1,95 @@
+.sing-in{
+    display: flex;
+    justify-content: center;
+    box-shadow: 3px 1px 3px 3px #aaaaaa;
+    border-radius: 5px;
+    margin: 5rem;
+    width: fit-content;
+    height: fit-content;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.sing-in-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 2rem;
+}
+
+.sing-in-form button {
+    margin-top: 1rem;
+} 
+.sing-in-form-user, .sing-in-form-pass,
+.sing-in-form-user-invalid, .sing-in-form-pass-invalid{
+    display: flex;
+}
+
+.sing-in-form-user input, .sing-in-form-pass input,
+.sing-in-form-user-invalid, .sing-in-form-pass-invalid{
+    margin-bottom: 1rem;
+}
+
+.sing-in-form-wraper{
+    display: flex;
+    margin-right: 3rem;
+}
+
+.sing-in-form-wraper input[type="text"]{
+    position: relative;
+}
+
+
+.sing-in-form-user input::placeholder{ 
+    color: rgba(0, 223, 193, 0.719);
+    font-size: 1rem;
+}
+
+.sing-in-form-pass input::placeholder{
+    color: rgba(0, 223, 193, 0.719);
+    font-size: 1rem;
+}
+
+input:focus{
+    outline: none;
+    border:none;
+    border-bottom-style: solid;
+    border-bottom-color: rgba(0, 223, 193, 0.719);
+}
+
+
+.sing-in-form-image img{
+    width: 20rem;
+    height: 20rem;
+}
+
+.sing-in-form-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.fa-w-14 {
+    font-size: 1.2rem;
+    z-index: +1;
+    position: absolute;
+    color: #00DFC0;
+}
+
+.sing-in-form-pass .fa-w-16{
+    font-size: 1.2rem;
+    z-index: +1;
+    position: absolute;
+    color: #00DFC0;
+}
+
+@media (max-width: 600px){
+    .sing-in-form-wraper{
+        padding-top: 1rem;
+        flex-direction: column;
+        align-items: center;
+    }
+}

@@ -1,0 +1,23 @@
+.sing-in-form-user input, .sing-in-form-pass input {
+    border: none;
+    border-bottom-style: solid;
+    border-bottom-color: rgba(0, 223, 193, 0.719);
+    padding : 0.2rem;
+    padding-left: 2rem;
+    color: #5d5b59;
+}
+
+#sing-in-form-user-icon {
+    font-size: 1.2rem;
+    z-index: +1;
+    position: absolute;
+    color: #00DFC0;
+}
+
+#sing-in-form-pass-icon {
+    font-size: 1.2rem;
+    z-index: +1;
+    position: absolute;
+    color: #00DFC0;
+}
+
