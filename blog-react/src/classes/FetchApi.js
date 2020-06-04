@@ -13,4 +13,15 @@ export class FetchApi {
     return postsJson
   }
 
+  async postPost(post) {
+    const response = await fetch(this.baseUrl + '/posts', { 
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(post)
+    });
+    const responseJson = await response.json();
+    console.log(responseJson)
+    return responseJson
+  }
+
 }

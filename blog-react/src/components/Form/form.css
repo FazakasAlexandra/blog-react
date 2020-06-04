@@ -72,13 +72,6 @@ input:focus{
     align-self: center;
 }
 
-.fa-w-14 {
-    font-size: 1.2rem;
-    z-index: +1;
-    position: absolute;
-    color: #00DFC0;
-}
-
 .sing-in-form-pass .fa-w-16{
     font-size: 1.2rem;
     z-index: +1;

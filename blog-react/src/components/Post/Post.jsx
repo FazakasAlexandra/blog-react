@@ -3,7 +3,7 @@ import './Post.css'
 
 export function Post(props) {
   const button = props.isSingle && props.isAuth ? (
-    <button onClick={() => props.onEditButtonClick(props.post)}>
+    <button onClick={() => props.onEditButtonClick(props.post)} className="single-post-edit-button">
       Edit
     </button>
   ) : props.isSingle || (

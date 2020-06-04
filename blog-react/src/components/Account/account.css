@@ -1,0 +1,75 @@
+.account-wraper{
+    box-shadow: 3px 1px 3px 3px #aaaaaa;
+    width: fit-content;
+    height: fit-content;
+    margin: 0 auto;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    padding: 2rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
+} 
+
+.account {
+    display: flex;
+    justify-content: center;
+}
+
+.controls {
+    margin-bottom: 12rem;
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    left: 25.5rem;
+    height: 20rem;
+}
+
+#new-post {
+    height: 2rem;
+    margin-right: 3rem;
+    width: 8rem;
+    background-color: #8C50FF;
+}
+#edit-post {
+    height: 2rem;
+    margin-right: 3rem;
+    width: 8rem;
+    background-color: #8C50FF;
+}
+#delete-post {
+    padding-left: 1rem;
+    height: 2rem;
+    width: 8rem;
+    background-color: #8C50FF;
+}
+
+#delete-post .fa-w-14 {
+    margin-left: 0.5rem;
+}
+
+.user-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-left: 4rem;
+    margin-bottom: 4rem;
+
+    width: 500px;
+    height: 500px;
+    background-repeat: no-repeat;
+    background-image: url(https://isometric.online/wp-content/uploads/2019/08/Search_SVG.svg);
+    background-size: 500px 500px;
+}
+
+.user-image img {
+    width: 20rem;
+    height: 20rem;
+}
+
+.controls .fa-w-14 , .fa-w-18{
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+}
