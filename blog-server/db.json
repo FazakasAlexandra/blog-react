@@ -1,39 +1,6 @@
 {
   "posts": [
     {
-      "title": "ADD NOUL POST",
-      "text": "POST NOU",
-      "id": "1590229047278"
-    },
-    {
-      "author": "Razvan",
-      "title": "Post 2",
-      "text": "Post nou",
-      "date": "12/03/2020",
-      "id": "1590229206513"
-    },
-    {
-      "author": "Razvan",
-      "title": "Post 2",
-      "text": "Post nou",
-      "date": "12/03/2020",
-      "id": "1590229208289"
-    },
-    {
-      "author": "Razvan",
-      "title": "Post 2",
-      "text": "Post nou",
-      "date": "12/03/2020",
-      "id": "1590229228226"
-    },
-    {
-      "author": "Razvan",
-      "title": "Post 2",
-      "text": "Post nou",
-      "date": "12/03/2020",
-      "id": "1590229229020"
-    },
-    {
       "author": "Razvan",
       "title": "Post 2",
       "text": "Post nou",
@@ -45,35 +12,7 @@
       "title": "Post 2",
       "text": "Post nou",
       "date": "12/03/2020",
-      "id": "1590229230241"
-    },
-    {
-      "author": "Razvan",
-      "title": "Post 2",
-      "text": "Post nou",
-      "date": "12/03/2020",
-      "id": "1590229235858"
-    },
-    {
-      "author": "Razvan",
-      "title": "Post 2",
-      "text": "Post nou",
-      "date": "12/03/2020",
-      "id": "1590229236500"
-    },
-    {
-      "author": "Razvan",
-      "title": "Post 2",
-      "text": "Post nou",
-      "date": "12/03/2020",
       "id": "1590229237066"
-    },
-    {
-      "author": "Razvan",
-      "title": "Post 2",
-      "text": "Post nou",
-      "date": "12/03/2020",
-      "id": "1590229237461"
     },
     {
       "title": "No title",
@@ -81,6 +20,69 @@
       "date": "",
       "text": "",
       "id": "1591295463832"
+    },
+    {
+      "title": "Water",
+      "author": "Alexandra",
+      "date": "06.05.2020",
+      "text": "Water is good for you, your family, your plants and for the success of future generations. Everybody should drink water for a better world and so on.",
+      "id": "1591341795558"
+    },
+    {
+      "title": "More water",
+      "author": "Alexandra",
+      "date": "06.05.2020",
+      "text": "Water is good for you, your family, your plants and for the success of future generations. Everybody should drink water for a better world and so on. A cookie associated with a cross-site resource at https://grammarly.com/ was set without the `SameSite` attribute. A future release of Chrome will only deliver cookies with cross-site requests if they are set with `SameSite=None` and `Secure`. You can review cookies in developer tools under Application>Storage>Cookies and see more details at https://www.chromestatus.com/feature/5088147346030592 and https://www.chromestatus.com/feature/5633521622188032.",
+      "id": "1591341893895"
+    },
+    {
+      "title": "Sliced apple",
+      "author": "Alexandra",
+      "date": "06.05.2020",
+      "text": "bla",
+      "id": "1591342070399"
+    },
+    {
+      "title": "Lorem",
+      "author": "Alexandra",
+      "date": "06.05.2020",
+      "text": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?\n\nOn the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business is will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.",
+      "id": "1591352386432"
+    },
+    {
+      "title": "More Lorem",
+      "author": "Alexandra",
+      "date": "06.05.2020",
+      "text": "Damit Ihr indess erkennt, woher dieser ganze Irrthum gekommen ist, und weshalb man die Lust anklagt und den Schmerz lobet, so will ich Euch Alles eröffnen und auseinander setzen, was jener Begründer der Wahrheit und gleichsam Baumeister des glücklichen Lebens selbst darüber gesagt hat. Niemand, sagt er, verschmähe, oder hasse, oder fliehe die Lust als solche, sondern weil grosse Schmerzen ihr folgen, wenn man nicht mit Vernunft ihr nachzugehen verstehe. Ebenso werde der Schmerz als solcher von Niemand geliebt, gesucht und verlangt, sondern weil mitunter solche Zeiten eintreten, dass man mittelst Arbeiten und Schmerzen eine grosse Lust sich zu verschaften suchen müsse. Um hier gleich bei dem Einfachsten stehen zu bleiben, so würde Niemand von uns anstrengende körperliche Übungen vornehmen, wenn er nicht einen Vortheil davon erwartete. Wer dürfte aber wohl Den tadeln, der nach einer Lust verlangt, welcher keine Unannehmlichkeit folgt, oder der einem Schmerze ausweicht, aus dem keine Lust hervorgeht?\n\nDagegen tadelt und hasst man mit Recht Den, welcher sich durch die Lockungen einer gegenwärtigen Lust erweichen und verführen lässt, ohne in seiner blinden Begierde zu sehen, welche Schmerzen und Unannehmlichkeiten seiner deshalb warten. Gleiche Schuld treffe Die, welche aus geistiger Schwäche, d.h. um der Arbeit und dem Schmerze zu entgehen, ihre Pflichten verabsäumen. Man kann hier leicht und schnell den richtigen Unterschied treffen; zu einer ruhigen Zeit, wo die Wahl der Entscheidung völlig frei ist und nichts hindert, das zu thun, was den Meisten gefällt, hat man jede Lust zu erfassen und jeden Schmerz abzuhalten; aber zu Zeiten trifft es sich in Folge von schuldigen Pflichten oder von sachlicher Noth, dass man die Lust zurückweisen und Beschwerden nicht von sich weisen darf. Deshalb trifft der Weise dann eine Auswahl, damit er durch Zurückweisung einer Lust dafür eine grössere erlange oder durch Übernahme gewisser Schmerzen sich grössere erspare.",
+      "id": "1591352477680"
+    },
+    {
+      "title": "Again lorem",
+      "author": "No one",
+      "date": "06.05.2020",
+      "text": "Dagegen tadelt und hasst man mit Recht Den, welcher sich durch die Lockungen einer gegenwärtigen Lust erweichen und verführen lässt, ohne in seiner blinden Begierde zu sehen, welche Schmerzen und Unannehmlichkeiten seiner deshalb warten. Gleiche Schuld treffe Die, welche aus geistiger Schwäche, d.h. um der Arbeit und dem Schmerze zu entgehen, ihre Pflichten verabsäumen. Man kann hier leicht und schnell den richtigen Unterschied treffen; zu einer ruhigen Zeit, wo die Wahl der Entscheidung völlig frei ist und nichts hindert, das zu thun, was den Meisten gefällt, hat man jede Lust zu erfassen und jeden Schmerz abzuhalten; aber zu Zeiten trifft es sich in Folge von schuldigen Pflichten oder von sachlicher Noth, dass man die Lust zurückweisen und Beschwerden nicht von sich weisen darf. Deshalb trifft der Weise dann eine Auswahl, damit er durch Zurückweisung einer Lust dafür eine grössere erlange oder durch Übernahme gewisser Schmerzen sich grössere erspare.",
+      "id": "1591352592439"
+    },
+    {
+      "title": "Loremus Lorem",
+      "author": "Alexandra",
+      "date": "06.05.2020",
+      "text": "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business is will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.",
+      "id": "1591352661042"
+    },
+    {
+      "title": "Lorem",
+      "author": "Alexandra",
+      "date": "06.05.2020",
+      "text": "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business is will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.",
+      "id": "1591352795131"
+    },
+    {
+      "title": "Verify lorem",
+      "author": "No one",
+      "date": "06.05.2020",
+      "text": "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business is will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.",
+      "id": "1591352825833"
     }
   ],
   "comments": [

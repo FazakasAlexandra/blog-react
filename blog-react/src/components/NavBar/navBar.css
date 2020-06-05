@@ -19,6 +19,12 @@
     padding:1rem;
 } 
 
+#four{
+    margin-left: auto;
+    margin-right: 2rem;
+    padding:1rem
+}
+
 li:hover{
     cursor: pointer;
 }

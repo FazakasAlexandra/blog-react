@@ -27,6 +27,11 @@ function checkUser(localName, localPassword) {
   return validUser
 }
 
+function removeLocalStorageItem(FirstKey, SecKey) {
+  window.localStorage.removeItem(FirstKey)
+  window.localStorage.removeItem(SecKey)
+}
+
 class App extends React.Component {
   constructor() {
     super();
@@ -34,6 +39,7 @@ class App extends React.Component {
       posts: [],
       isAuth: false,
       editMode: false,
+      deleteMode: false,
       newPostMode: false,
       currentPage: 'home.html'
     }
@@ -90,12 +96,51 @@ class App extends React.Component {
     this.setState({newPostMode: true})
   }
 
-  async handlePostFormButton(post){
+  handleSingOut = () => {
+    this.setState({currentPage: 'home.html', isAuth: false})
+    removeLocalStorageItem('name', 'password')
+  }
+
+  handleDeleteButton = () => {
+    console.log('delete clicked')
+    this.setState({currentPage: "delete-post.html", deleteMode: true}, () => {
+      console.error(this.state)
+    })
+    console.log(this.state)
+  }
+
+  handlePostsDeleteButton = (post) => {
+    console.log('hello')
+    console.log(post.id)
+    this.deletePost(post.id)
+  }
+
+  deletePost(postId){
+    const fetchApi = new FetchApi('http://localhost:3000');
+    fetchApi.delete(postId);
+    this.setState({
+      posts: this.state.posts.filter(post => post.id != postId)
+    })
+  }
+
+  handlePostFormButton = async (post) => {
     console.log('post button clicked')
     console.log(post) 
     const fetchApi = new FetchApi('http://localhost:3000');
-    const newPost = await fetchApi.postPost(post);
+    const newPost = await fetchApi.sendPost(post);
     console.log(newPost)
+    this.displayNewPost(newPost)
+  }
+
+  displayNewPost = (newPost) => {
+    console.error(newPost.id)
+    let postsCopy = [...this.state.posts]
+    postsCopy.push(newPost)
+    this.setState({posts: postsCopy,
+                   currentPage: 'view-post.html', 
+                   selectedPost: newPost, 
+                   editMode: false,
+                  })
   }
 
   changeStateMods(){
@@ -120,26 +165,49 @@ class App extends React.Component {
               post={post}
               onViewButtonClick={this.handleViewButton}
               isSingle={false}
+              auth={post.author}
+              page={this.state.currentPage}
+              deleteMode={this.state.deleteMode}
             ></Post>
           )
         })
         return postCmps;
       }
+
+      case 'delete-post.html' : {
+        const posts = this.state.posts
+        const postCmps = posts.map(post => {
+          return (
+            <Post
+              key={post.id}
+              post={post}
+              onDeleteButtonClick={this.handlePostsDeleteButton}
+              isSingle={false}
+              auth={post.author}
+              page={this.state.currentPage}
+              deleteMode={this.state.deleteMode}
+            ></Post>
+          )
+        })
+        return postCmps;
+      }
+
       case 'view-post.html': {
         return this.isLoggedInView()
-
       }
+
       case 'sing-in.html': {
         return <Form
           singIn={this.handleSingIn}
         />
       }
+
       case 'account.html': {
         console.log('account.html')
         if(this.state.newPostMode){
           return (<PostForm
             postFormClickEvent={this.handlePostFormButton}/>)
-        } else {
+        } else { 
         return (<Account
           postClickEvent={this.handlePostButton}
           editClickEvent={this.handleEditButton}
@@ -156,10 +224,13 @@ class App extends React.Component {
       return (
         <div>
           <Post
+            auth={this.author}
             post={this.state.selectedPost}
             isSingle={true}
             isAuth={true}
             onEditButtonClick={() => this.handleEditButton(this.state.selectedPost)}
+            page={this.state.currentPage}
+            deleteMode={this.state.deleteMode}
           ></Post>
         </div>
       )
@@ -167,8 +238,10 @@ class App extends React.Component {
       return (
         <div>
           <Post
+            auth={this.author}
             post={this.state.selectedPost}
             isSingle={true}
+            page={this.state.currentPage}
           ></Post>
         </div>
       )
@@ -190,6 +263,9 @@ class App extends React.Component {
       case 'account.html':
         className = 'acount-wraper'
         break
+      case 'delete-post.html':
+        className = 'posts'
+        break
     }
 
     return className
@@ -203,6 +279,7 @@ class App extends React.Component {
             isLoggedIn={this.state.isAuth}
             accountClickEvent={this.handleAccountSection}
             singInClickEvent={this.handleSingInSection}
+            signOutClickEvent={this.handleSingOut}
           />
         </React.Fragment>
         <div className={this.choseMainSectionClass()}>

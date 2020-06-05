@@ -16,6 +16,7 @@ export function NavBar(props) {
             <li id = "one" onClick={()=>props.homeClickEvent()}><FontAwesomeIcon icon = "home"/><span> Home</span></li>
             <li id = "two"><span>About</span></li>
             <li id = "three" onClick={()=>accountClickEvent()}><span>{props.isLoggedIn ? account : 'Sign in'}</span></li>
+            <li id = "four" onClick={()=>props.signOutClickEvent()}><span>{props.isLoggedIn ? 'Sign out' : null}</span></li>
         </ul>
     </React.Fragment>
     )

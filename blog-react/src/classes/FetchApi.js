@@ -13,7 +13,7 @@ export class FetchApi {
     return postsJson
   }
 
-  async postPost(post) {
+  async sendPost(post) {
     const response = await fetch(this.baseUrl + '/posts', { 
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
@@ -24,4 +24,10 @@ export class FetchApi {
     return responseJson
   }
 
+  delete(id) {
+    fetch(`${this.baseUrl}/posts/${id}`, {
+      method: 'DELETE',
+      headers: {'Content-Type': 'application/json'},
+    })
+  }
 }
