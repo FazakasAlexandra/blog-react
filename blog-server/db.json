@@ -1,27 +1,6 @@
 {
   "posts": [
     {
-      "author": "Razvan",
-      "title": "Post 2",
-      "text": "Post nou",
-      "date": "12/03/2020",
-      "id": "1590229229676"
-    },
-    {
-      "author": "Razvan",
-      "title": "Post 2",
-      "text": "Post nou",
-      "date": "12/03/2020",
-      "id": "1590229237066"
-    },
-    {
-      "title": "No title",
-      "author": "Anonymous",
-      "date": "",
-      "text": "",
-      "id": "1591295463832"
-    },
-    {
       "title": "Water",
       "author": "Alexandra",
       "date": "06.05.2020",
@@ -34,13 +13,6 @@
       "date": "06.05.2020",
       "text": "Water is good for you, your family, your plants and for the success of future generations. Everybody should drink water for a better world and so on. A cookie associated with a cross-site resource at https://grammarly.com/ was set without the `SameSite` attribute. A future release of Chrome will only deliver cookies with cross-site requests if they are set with `SameSite=None` and `Secure`. You can review cookies in developer tools under Application>Storage>Cookies and see more details at https://www.chromestatus.com/feature/5088147346030592 and https://www.chromestatus.com/feature/5633521622188032.",
       "id": "1591341893895"
-    },
-    {
-      "title": "Sliced apple",
-      "author": "Alexandra",
-      "date": "06.05.2020",
-      "text": "bla",
-      "id": "1591342070399"
     },
     {
       "title": "Lorem",
@@ -83,6 +55,20 @@
       "date": "06.05.2020",
       "text": "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business is will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.",
       "id": "1591352825833"
+    },
+    {
+      "title": "Sliced apple",
+      "author": "Alexandra",
+      "date": "06.05.2020",
+      "text": "Maximum update depth exceeded. This can happen when a component repeatedly calls setState inside componentWillUpdate or componentDidUpdate. React limits the number of nested updates to prevent infinite loops.",
+      "id": "1591381725507"
+    },
+    {
+      "title": "Asian afternoon",
+      "author": "No one",
+      "date": "06.05.2020",
+      "text": "Maximum update depth exceeded. This can happen when a component repeatedly calls setState inside componentWillUpdate or componentDidUpdate. React limits the number of nested updates to prevent infinite loops.",
+      "id": "1591381761879"
     }
   ],
   "comments": [

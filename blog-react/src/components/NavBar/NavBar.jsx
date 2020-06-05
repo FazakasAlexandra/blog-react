@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 export function NavBar(props) {  
     let account = <> <FontAwesomeIcon icon="user"/><span> Account</span> </>
     let accountClickEvent = props.isLoggedIn ? props.accountClickEvent : props.singInClickEvent
-    console.log(accountClickEvent)
     
     return (
     <React.Fragment>

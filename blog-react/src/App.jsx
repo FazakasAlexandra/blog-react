@@ -3,10 +3,9 @@ import { FetchApi } from './classes/FetchApi'
 import { Post } from './components/Post/Post';
 import { NavBar } from './components/NavBar/NavBar'
 import { Footer } from './components/Footer/Footer'
-import { Form } from './components/Form/Form'
-import { Account } from './components/Account/Account'
-import { PostForm } from './components/PostForm/PostForm' 
+
 import './App.css';
+import { choseClassName, choseComponent } from'./switches.jsx'
 
 function userSignedIn() {
   let signedIn;
@@ -27,9 +26,9 @@ function checkUser(localName, localPassword) {
   return validUser
 }
 
-function removeLocalStorageItem(FirstKey, SecKey) {
-  window.localStorage.removeItem(FirstKey)
-  window.localStorage.removeItem(SecKey)
+function removeLocalStorageItem(firstKey, secKey) {
+  window.localStorage.removeItem(firstKey)
+  window.localStorage.removeItem(secKey)
 }
 
 class App extends React.Component {
@@ -41,6 +40,7 @@ class App extends React.Component {
       editMode: false,
       deleteMode: false,
       newPostMode: false,
+      postModeChange: false,
       currentPage: 'home.html'
     }
   }
@@ -48,7 +48,7 @@ class App extends React.Component {
   async componentDidMount() {
     const fetchApi = new FetchApi('http://localhost:3000');
     const posts = await fetchApi.getPosts();
-    console.log(posts);    
+    console.log(posts);
     this.setState({ posts: posts })
 
     if (userSignedIn()) {
@@ -69,10 +69,23 @@ class App extends React.Component {
     this.setState({ currentPage: 'home.html' })
   }
 
-  handleEditButton = () => {
-    this.setState({ editMode: true })
-    console.log(this.state.editMode)
-    console.log(this.state.selectedPost)
+  handleAccountEditButton = () => {
+    this.setState({ editMode: true, currentPage: 'edit-post-section-one.html', }, () => {
+      console.log(this.state.editMode)
+      console.log(this.state)
+    })
+  }
+
+  handleEditButton = (post) => {
+    console.log(post.id)
+    console.log('edit button clicked')
+    this.setState({editMode: true, currentPage: 'edit-post-section-two.html'})
+
+    //this.editpost(post, post.id)
+  }
+
+  editPost = async () => {
+
   }
 
   handleSingInSection = () => {
@@ -83,30 +96,23 @@ class App extends React.Component {
     this.setState({ currentPage: 'account.html' })
   }
 
-  signInButtonHandler = () => {
-    console.log('sign in button clicked')
-  }
-
   handleSingIn = () => {
     console.log('worked')
     this.setState({ currentPage: 'account.html', isAuth: true })
   }
 
   handlePostButton = () => {
-    this.setState({newPostMode: true})
+    this.setState({ newPostMode: true, currentPage: 'create-post.html' })
   }
 
   handleSingOut = () => {
-    this.setState({currentPage: 'home.html', isAuth: false})
+    this.setState({ currentPage: 'home.html', isAuth: false })
     removeLocalStorageItem('name', 'password')
   }
 
   handleDeleteButton = () => {
     console.log('delete clicked')
-    this.setState({currentPage: "delete-post.html", deleteMode: true}, () => {
-      console.error(this.state)
-    })
-    console.log(this.state)
+    this.setState({ currentPage: "delete-post.html", deleteMode: true })
   }
 
   handlePostsDeleteButton = (post) => {
@@ -115,7 +121,7 @@ class App extends React.Component {
     this.deletePost(post.id)
   }
 
-  deletePost(postId){
+  deletePost(postId) {
     const fetchApi = new FetchApi('http://localhost:3000');
     fetchApi.delete(postId);
     this.setState({
@@ -125,7 +131,7 @@ class App extends React.Component {
 
   handlePostFormButton = async (post) => {
     console.log('post button clicked')
-    console.log(post) 
+    console.log(post)
     const fetchApi = new FetchApi('http://localhost:3000');
     const newPost = await fetchApi.sendPost(post);
     console.log(newPost)
@@ -136,87 +142,27 @@ class App extends React.Component {
     console.error(newPost.id)
     let postsCopy = [...this.state.posts]
     postsCopy.push(newPost)
-    this.setState({posts: postsCopy,
-                   currentPage: 'view-post.html', 
-                   selectedPost: newPost, 
-                   editMode: false,
-                  })
+    this.setState ({
+      posts: postsCopy,
+      currentPage: 'view-post.html',
+      selectedPost: newPost,
+      newPostMode: false,
+    })
   }
 
-  changeStateMods(){
-    if(this.state.newPostMode){
-      this.setState({newPostMode: false})
-    } else if(this.state.editMode){
-      this.setState({editMode: false})
-    } else if(this.state.deleteMode){
-      this.setState({deleteMode: false})
+  cancelStateModes() {
+    if (this.state.newPostMode) {
+      this.setState({ newPostMode: false })
+    } else if (this.state.editMode) {
+      this.setState({ editMode: false })
+    } else if (this.state.deleteMode) {
+      this.setState({ deleteMode: false })
     }
   }
 
   renderView() {
-    switch (this.state.currentPage) {
-      case 'home.html': {
-        this.changeStateMods()
-        const posts = this.state.posts
-        const postCmps = posts.map(post => {
-          return (
-            <Post
-              key={post.id}
-              post={post}
-              onViewButtonClick={this.handleViewButton}
-              isSingle={false}
-              auth={post.author}
-              page={this.state.currentPage}
-              deleteMode={this.state.deleteMode}
-            ></Post>
-          )
-        })
-        return postCmps;
-      }
-
-      case 'delete-post.html' : {
-        const posts = this.state.posts
-        const postCmps = posts.map(post => {
-          return (
-            <Post
-              key={post.id}
-              post={post}
-              onDeleteButtonClick={this.handlePostsDeleteButton}
-              isSingle={false}
-              auth={post.author}
-              page={this.state.currentPage}
-              deleteMode={this.state.deleteMode}
-            ></Post>
-          )
-        })
-        return postCmps;
-      }
-
-      case 'view-post.html': {
-        return this.isLoggedInView()
-      }
-
-      case 'sing-in.html': {
-        return <Form
-          singIn={this.handleSingIn}
-        />
-      }
-
-      case 'account.html': {
-        console.log('account.html')
-        if(this.state.newPostMode){
-          return (<PostForm
-            postFormClickEvent={this.handlePostFormButton}/>)
-        } else { 
-        return (<Account
-          postClickEvent={this.handlePostButton}
-          editClickEvent={this.handleEditButton}
-          deleteClickEvent={this.handleDeleteButton}
-        />)
-        }
-
-      }
-    }
+    let view = choseComponent(this)
+    return view
   }
 
   isLoggedInView() {
@@ -228,7 +174,6 @@ class App extends React.Component {
             post={this.state.selectedPost}
             isSingle={true}
             isAuth={true}
-            onEditButtonClick={() => this.handleEditButton(this.state.selectedPost)}
             page={this.state.currentPage}
             deleteMode={this.state.deleteMode}
           ></Post>
@@ -249,27 +194,11 @@ class App extends React.Component {
   }
 
   choseMainSectionClass() {
-    let className = ""
-    switch (this.state.currentPage) {
-      case 'home.html':
-        className = 'posts'
-        break
-      case 'view-post.html':
-        className = 'posts-view'
-        break
-      case 'sing-in.html':
-        className = 'sing-in'
-        break
-      case 'account.html':
-        className = 'acount-wraper'
-        break
-      case 'delete-post.html':
-        className = 'posts'
-        break
-    }
+    let className = choseClassName(this.state)
 
     return className
   }
+
   render() {
     return (
       <React.Fragment>

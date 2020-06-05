@@ -24,6 +24,17 @@ export class FetchApi {
     return responseJson
   }
 
+  async editPost(post, id) {
+    const response = await fetch(`${this.baseUrl}/posts/${id}`, {
+      method: 'PUT',
+      headers: {'Content-Type' : 'application/json'},
+      body: JSON.stringify(post)
+    });
+    const responseJson = await response.json()
+    console.log(responseJson)
+    return responseJson
+  }
+
   delete(id) {
     fetch(`${this.baseUrl}/posts/${id}`, {
       method: 'DELETE',
