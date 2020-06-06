@@ -1,8 +1,9 @@
-import './form.css'
+import './sign-in-form.css'
 import './invalid-inputs.css'
 import './valid-inputs.css'
 import React, { Component } from 'react'
-import '../Fontawesome/Fontawesome'
+import '../../Fontawesome/Fontawesome'
+//import '../Fontawesome/Fontawesome'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function setLocalStorage(name, password) {
@@ -10,7 +11,7 @@ function setLocalStorage(name, password) {
     localStorage.setItem("password", password);
 }
 
-export class SignInForm extends Component {
+export class SignInForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {

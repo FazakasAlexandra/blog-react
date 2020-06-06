@@ -1,7 +1,8 @@
-import { Form } from './components/SignInForm/SignInForm'
-import { Account } from './components/Account/Account'
-import { NewPostForm } from './components/NewPostForm/NewPostForm'
 import { Post } from './components/Post/Post';
+import { SignInForm } from './components/Forms/SignInForm/SignInForm'
+import { Account } from './components/Account/Account'
+import { NewPostForm } from './components/Forms/NewPostForm/NewPostForm'
+import { EditPostForm } from './components/Forms/EditPostForm/EditPostForm'
 import React from 'react'
 
 function choseClassName(state) {
@@ -61,6 +62,8 @@ function choseComponent(self) {
       return (
         <div>
           <Post
+            // auth is needed to chose one of two imgs
+            auth={self.state.selectedPost.author}
             post={self.state.selectedPost}
             page={'view-post.html'}
           ></Post>
@@ -69,14 +72,14 @@ function choseComponent(self) {
     }
 
     case 'sing-in.html': {
-      return <Form singIn={self.handleSingIn} />
+      return <SignInForm singIn={self.handleSingIn} />
     }
 
     case 'account.html': {
       return (
         <Account
           // newPostMode -> true
-          acctNewPostClick={self.handleAccNewPost}
+          accNewPostClick={self.handleAccNewPost}
           // editPostMode -> true
           accEditPostClick={self.handleAccEditPost}
           // deletePostMode -> true
@@ -106,7 +109,7 @@ function choseComponent(self) {
     }
 
     case 'edit-post.html': {
-      return <h3> Edit form comes here </h3>
+      return <EditPostForm/>
     }
 
     case 'delete-post.html': {

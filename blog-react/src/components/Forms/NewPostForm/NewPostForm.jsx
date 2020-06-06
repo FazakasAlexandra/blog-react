@@ -1,6 +1,5 @@
 import React from 'react'
-import '.new/PostForm.css'
-import '../Fontawesome/Fontawesome'
+import './newPostForm.css'
 
 export class NewPostForm extends React.Component {
     constructor(props) {

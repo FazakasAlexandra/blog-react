@@ -1,26 +1,21 @@
 import React from 'react';
+import './App.css';
 import { FetchApi } from './classes/FetchApi'
 import { NavBar } from './components/NavBar/NavBar'
 import { Footer } from './components/Footer/Footer'
-import './App.css';
-import { choseClassName, choseComponent } from './switches.jsx'
+import { choseClassName, choseComponent } from './navigation.jsx'
 
 function userSignedIn() {
-  let signedIn;
   let localName = localStorage.getItem("name")
   let localPassword = localStorage.getItem("password")
 
-  signedIn = checkUser(localName, localPassword)
+  let signedIn = checkUser(localName, localPassword)
 
   return signedIn
 }
 
 function checkUser(localName, localPassword) {
-  let validUser;
-  if (localName === 'admin' && localPassword === 'admin') {
-    validUser = true
-    console.error('true')
-  }
+  let validUser = localName === 'admin' && localPassword === 'admin' ? true : false
   return validUser
 }
 
@@ -77,7 +72,7 @@ class App extends React.Component {
   }
 
 
-  // handlers for account buttons
+  // handlers for account(Acc) buttons
   handleAccNewPost = () => {
     this.setState({ newPostMode: true, currentPage: 'new-post.html' })
   }
@@ -86,7 +81,7 @@ class App extends React.Component {
     this.setState({ editPostMode: true, currentPage: 'edit-post.html'})
   }
 
-  handleAccDeletePostBttn = () => {
+  handleAccDeletePost = () => {
     this.setState({ deletePostMode: true, currentPage: "delete-post.html"})
   }
 
@@ -109,7 +104,6 @@ class App extends React.Component {
   }
 
   displayNewPost = (newPost) => {
-    console.error(newPost.id)
     let postsCopy = [...this.state.posts]
     postsCopy.push(newPost)
     this.setState({
@@ -121,8 +115,7 @@ class App extends React.Component {
   }
 
   handleEditPost = (post) => {
-    console.log(post.id)
-    console.log('edit button clicked')
+    console.error(post.id)
     this.setState({ editMode: true, currentPage: 'account-edit-post-id.html' })
 
     //this.editpost(post, post.id)
@@ -132,6 +125,7 @@ class App extends React.Component {
 
   }
 
+  // rename me 
   handlePostsDeleteButton = (post) => {
     this.setState({posts: this.state.posts.filter(post => post.id != post.id)})
     this.deletePost(post.id)

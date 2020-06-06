@@ -39,7 +39,7 @@ export function Post(props) {
     let viewPageText = <p>{props.post.text}</p> 
     let length;
     
-    if(props.page === 'home.html' || props.page === 'delete-post.html' || props.page === 'edit-post-section-one.html'){
+    if(props.page === 'home.html' || props.page === 'delete-post.html' || props.page === 'edit-post.html'){
       length = homePageText
     } else {
       length = viewPageText
