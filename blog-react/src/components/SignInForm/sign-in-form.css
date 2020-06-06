@@ -1,4 +1,4 @@
-.sing-in{
+.sign-in{
     display: flex;
     justify-content: center;
     box-shadow: 3px 1px 3px 3px #aaaaaa;
@@ -11,42 +11,42 @@
     margin-top: 2rem;
 }
 
-.sing-in-form{
+.sign-in-form{
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding-left: 2rem;
 }
 
-.sing-in-form button {
+.sign-in-form button {
     margin-top: 1rem;
 } 
-.sing-in-form-user, .sing-in-form-pass,
-.sing-in-form-user-invalid, .sing-in-form-pass-invalid{
+.sign-in-form-user, .sign-in-form-pass,
+.sign-in-form-user-invalid, .sign-in-form-pass-invalid{
     display: flex;
 }
 
-.sing-in-form-user input, .sing-in-form-pass input,
-.sing-in-form-user-invalid, .sing-in-form-pass-invalid{
+.sign-in-form-user input, .sign-in-form-pass input,
+.sign-in-form-user-invalid, .sign-in-form-pass-invalid{
     margin-bottom: 1rem;
 }
 
-.sing-in-form-wraper{
+.sign-in-form-wraper{
     display: flex;
     margin-right: 3rem;
 }
 
-.sing-in-form-wraper input[type="text"]{
+.sign-in-form-wraper input[type="text"]{
     position: relative;
 }
 
 
-.sing-in-form-user input::placeholder{ 
+.sign-in-form-user input::placeholder{ 
     color: rgba(0, 223, 193, 0.719);
     font-size: 1rem;
 }
 
-.sing-in-form-pass input::placeholder{
+.sign-in-form-pass input::placeholder{
     color: rgba(0, 223, 193, 0.719);
     font-size: 1rem;
 }
@@ -59,12 +59,12 @@ input:focus{
 }
 
 
-.sing-in-form-image img{
+.sign-in-form-image img{
     width: 20rem;
     height: 20rem;
 }
 
-.sing-in-form-image {
+.sign-in-form-image {
     width: 100%;
     height: 100%;
     display: flex;
@@ -72,7 +72,7 @@ input:focus{
     align-self: center;
 }
 
-.sing-in-form-pass .fa-w-16{
+.sign-in-form-pass .fa-w-16{
     font-size: 1.2rem;
     z-index: +1;
     position: absolute;
@@ -80,7 +80,7 @@ input:focus{
 }
 
 @media (max-width: 600px){
-    .sing-in-form-wraper{
+    .sign-in-form-wraper{
         padding-top: 1rem;
         flex-direction: column;
         align-items: center;

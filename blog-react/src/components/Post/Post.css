@@ -1,12 +1,13 @@
+*{
+  font-family: sans-serif;
+ }
+
 h3{
   font-family: 'Amatic SC';
   font-size: 25px;
   color: #5d5b59;
 }
 
-*{
- font-family: sans-serif;
-}
 .post {
   display: flex;
   flex-direction: column;

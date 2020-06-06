@@ -9,25 +9,28 @@ export function Post(props) {
 
   function choseButton() {
     let button;
-    if (props.deleteMode) {
+
+    if (props.page === 'home.html') {
       button = <button 
-                 onClick={() => props.onDeleteButtonClick(props.post)} 
-                 className="delete-button">
-                <FontAwesomeIcon icon='trash-alt'/>
-               </button>
-    } else if (props.page === 'home.html') {
-      console.log('HERE')
-      button = <button 
-                 onClick={() => props.onViewButtonClick(props.post)}>
+                 onClick={() => props.postViewClick(props.post)}>
                  View
                 </button>
+
     } else if (props.editMode) {
       button = <button onClick={() => 
-                 props.onEditButtonClick(props.post)} 
+                 props.postEditClick(props.post)} 
                  className="edit-button">
                  Edit
                </button>
+               
+    } else if (props.deleteMode) {
+      button = <button 
+                 onClick={() => props.postDeleteClick(props.post)} 
+                 className="delete-button">
+                <FontAwesomeIcon icon='trash-alt'/>
+               </button>
     }
+
     return button
   }
 
@@ -41,6 +44,7 @@ export function Post(props) {
     } else {
       length = viewPageText
     }
+    
     return length
   } 
 
