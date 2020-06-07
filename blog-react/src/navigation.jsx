@@ -92,7 +92,7 @@ function choseComponent(self) {
 
     case 'new-post.html': {
       return (<NewPostForm 
-               formClickEvent={self.handleNewPost} 
+               postNewClick={self.handleNewPost} 
                buttonName = {'Post'}
                />)
     }

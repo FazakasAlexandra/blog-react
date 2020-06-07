@@ -1,5 +1,5 @@
 import React from 'react'
-import {NewPostForm} from '../NewPostForm/NewPostForm'
+import {PostForm} from '../PostForm/PostForm'
 
  export class EditPostForm extends React.Component {
      constructor(props){
@@ -8,7 +8,7 @@ import {NewPostForm} from '../NewPostForm/NewPostForm'
 
      render(){
          return (
-            <NewPostForm
+            <PostForm
             title = {this.props.title}
             author = {this.props.author}
             date = {this.props.date}
