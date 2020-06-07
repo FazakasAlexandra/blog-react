@@ -114,21 +114,49 @@ class App extends React.Component {
     })
   }
 
-  handleEditPost = (post) => {
-    console.error(post.id)
-    this.setState({ editMode: true, currentPage: 'account-edit-post-id.html' })
-
-    //this.editpost(post, post.id)
+  displayEditForm = (post) => {
+    console.error(post)
+    this.setState({ 
+      editMode: true, 
+      selectedPost: post,
+      currentPage: `edit-post-form.html`,
+     }, ()=>{
+      console.log(this.state)
+    })
   }
 
-  editPost = async () => {
-
+  handleEditPost = async (editedPost, id) => {
+    console.log(editedPost, this.state.selectedPost.id)
+    let fetchApi = new FetchApi('http://localhost:3000')
+    let response = await fetchApi.editPost(editedPost, this.state.selectedPost.id)
+    console.log(response)
+    this.displayEditedPost(response)
   }
 
-  // rename me 
-  handlePostsDeleteButton = (post) => {
-    this.setState({posts: this.state.posts.filter(post => post.id != post.id)})
-    this.deletePost(post.id)
+  displayEditedPost = (response) => {
+    let newPosts = this.replacePreviousPost(response)
+    this.setState({
+      editMode: false,
+      posts: newPosts,
+      selectedPost: response,
+      currentPage: `view-post.html`
+    })
+  }
+
+  replacePreviousPost(response) {
+    let newPosts = this.state.posts.map((post)=>{
+      if(post.id === response.id){
+        post = response
+      }
+      return post
+    })
+
+    return newPosts
+  }
+
+  handleDeletePost = (selectedPost) => {
+    this.setState({posts: this.state.posts.filter(post => post.id !== selectedPost.id)}, ()=>{console.log(this.state.posts)})
+    this.deletePost(selectedPost.id)
   }
 
   deletePost(postId) {

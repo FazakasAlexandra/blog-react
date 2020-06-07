@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export function Post(props) {
   const button = choseButton()
-  console.log(button)
 
   function choseButton() {
     let button;

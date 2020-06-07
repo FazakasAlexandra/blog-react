@@ -32,6 +32,9 @@ function choseClassName(state) {
     case 'edit-post.html':
       className = 'posts-edit'
       break
+
+    case `edit-post-form.html`:
+      className = `edit`
   }
 
   return className
@@ -88,7 +91,10 @@ function choseComponent(self) {
     }
 
     case 'new-post.html': {
-      return (<NewPostForm postFormClickEvent={self.handleNewPost} />)
+      return (<NewPostForm 
+               formClickEvent={self.handleNewPost} 
+               buttonName = {'Post'}
+               />)
     }
 
     case 'edit-post.html': {
@@ -99,7 +105,7 @@ function choseComponent(self) {
             auth={post.author}
             key={post.id}
             post={post}
-            onEditButtonClick={self.handleEditPost}
+            postEditClick={self.displayEditForm}
             page={'edit-post.html'}
             editMode={self.state.editPostMode}
           ></Post>
@@ -108,8 +114,17 @@ function choseComponent(self) {
       return postComponents;
     }
 
-    case 'edit-post.html': {
-      return <EditPostForm/>
+    case `edit-post-form.html`: {
+      let { selectedPost : post} = self.state
+      return (
+        <EditPostForm
+          title = {post.title}
+          text = {post.text}
+          author = {post.author}
+          date = {post.date}
+          new = {self.handleEditPost}
+        />
+      )
     }
 
     case 'delete-post.html': {
@@ -119,7 +134,7 @@ function choseComponent(self) {
           <Post
             key={post.id}
             post={post}
-            onDeleteButtonClick={self.handlePostsDeleteButton}
+            postDeleteClick={self.handleDeletePost}
             auth={post.author}
             page={'delete-post.html'}
             deleteMode={self.state.deletePostMode}

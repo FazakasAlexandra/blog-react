@@ -1,4 +1,5 @@
 import React from 'react'
+import {NewPostForm} from '../NewPostForm/NewPostForm'
 
  export class EditPostForm extends React.Component {
      constructor(props){
@@ -7,7 +8,14 @@ import React from 'react'
 
      render(){
          return (
-             <h3> Edit form comes here </h3>
+            <NewPostForm
+            title = {this.props.title}
+            author = {this.props.author}
+            date = {this.props.date}
+            text = {this.props.text}
+            buttonName = {'Submit'} 
+            formClickEvent = {this.props.new}
+            />
          )
      }
  }
