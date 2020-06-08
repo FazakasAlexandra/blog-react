@@ -40,6 +40,7 @@ function choseClassName(state) {
   return className
 }
 
+
 function choseComponent(self) {
   switch (self.state.currentPage) {
     case 'home.html': {
@@ -48,13 +49,12 @@ function choseComponent(self) {
       const postComponents = posts.map(post => {
         return (
           <Post
+            page={'home.html'}
             auth={post.author}
             key={post.id}
             post={post}
             // changes current page into 'view-post.html'
             postViewClick={self.handleViewBttn}
-            page={'home.html'}
-            deleteMode={self.state.deleteMode}
           ></Post>
         )
       })
@@ -65,7 +65,6 @@ function choseComponent(self) {
       return (
         <div>
           <Post
-            // auth is needed to chose one of two imgs
             auth={self.state.selectedPost.author}
             post={self.state.selectedPost}
             page={'view-post.html'}

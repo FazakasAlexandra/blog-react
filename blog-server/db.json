@@ -2,13 +2,6 @@
   "posts": [
     {
       "title": "Lorem",
-      "author": "Alexandra",
-      "date": "06.05.2020",
-      "text": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
-      "id": "1591526458348"
-    },
-    {
-      "title": "Lorem",
       "author": "No one",
       "date": "06.05.2020",
       "text": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
@@ -76,13 +69,6 @@
       "date": "06.05.2020",
       "text": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
       "id": "1591526623180"
-    },
-    {
-      "title": "No",
-      "author": "Anonymous",
-      "date": "",
-      "text": "",
-      "id": "1591528714398"
     }
   ],
   "comments": [
@@ -364,6 +350,151 @@
       "id": "1586800899481",
       "postId": "3",
       "date": "4/13/2020"
+    },
+    {
+      "user": "Razvan",
+      "text": "Ce faci?",
+      "id": "1591529154926",
+      "postId": "1591526557813",
+      "date": "6/7/2020"
+    },
+    {
+      "user": "Razvan",
+      "text": "Ce faci?",
+      "id": "1591529155861",
+      "postId": "1591526557813",
+      "date": "6/7/2020"
+    },
+    {
+      "user": "Razvan",
+      "text": "Ce faci?",
+      "id": "1591557654189",
+      "postId": "1591526485963",
+      "date": "6/7/2020"
+    },
+    {
+      "user": "Razvan",
+      "text": "Ce faci?",
+      "id": "1591557656836",
+      "postId": "1591526485963",
+      "date": "6/7/2020"
+    },
+    {
+      "user": "Alexandra",
+      "text": "Bine!",
+      "id": "1591557669974",
+      "postId": "1591526485963",
+      "date": "6/7/2020"
+    },
+    {
+      "user": "Alexandra",
+      "text": "Bine!",
+      "id": "1591557677938",
+      "postId": "1591526485963",
+      "date": "6/7/2020"
+    },
+    {
+      "user": "Alexandra",
+      "text": "Bine!",
+      "id": "1591597500557",
+      "postId": "1591526471304",
+      "date": "6/8/2020"
+    },
+    {
+      "user": "Alexandra",
+      "text": "Bine!",
+      "id": "1591597502100",
+      "postId": "1591526471304",
+      "date": "6/8/2020"
+    },
+    {
+      "id": "1591600275044",
+      "postId": "1591526471304",
+      "date": "6/8/2020"
+    },
+    {
+      "user": "Alexandra",
+      "text": "Bine!",
+      "id": "1591603574671",
+      "postId": "1591526471304",
+      "date": "6/8/2020"
+    },
+    {
+      "user": "Alexandra",
+      "text": "no!",
+      "id": "1591603594369",
+      "postId": "1591526471304",
+      "date": "6/8/2020"
+    },
+    {
+      "user": "",
+      "text": "comm",
+      "id": "1591606276964",
+      "postId": "1591526471304",
+      "date": "6/8/2020"
+    },
+    {
+      "user": "alexandra",
+      "text": "comm",
+      "id": "1591606315375",
+      "postId": "1591526458348",
+      "date": "6/8/2020"
+    },
+    {
+      "user": "alexandra",
+      "text": "hello",
+      "id": "1591606393983",
+      "postId": "1591526458348",
+      "date": "6/8/2020"
+    },
+    {
+      "user": "",
+      "text": "",
+      "id": "1591633516544",
+      "postId": "1591526471304",
+      "date": "6/8/2020"
+    },
+    {
+      "user": "",
+      "text": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).\n\n",
+      "id": "1591634199743",
+      "postId": "1591526471304",
+      "date": "6/8/2020"
+    },
+    {
+      "user": "",
+      "text": "",
+      "id": "1591638862722",
+      "postId": "1591526535303",
+      "date": "6/8/2020"
+    },
+    {
+      "user": "",
+      "text": "",
+      "id": "1591638895888",
+      "postId": "1591526535303",
+      "date": "6/8/2020"
+    },
+    {
+      "user": "",
+      "text": "",
+      "id": "1591638930501",
+      "postId": "1591526512390",
+      "date": "6/8/2020"
+    },
+    {
+      "user": "",
+      "text": "",
+      "id": "1591640109425",
+      "postId": "1591526485963",
+      "date": "6/8/2020"
+    },
+    {
+      "user": "",
+      "text": "",
+      "id": "1591642403394",
+      "postId": "1591526471304",
+      "date": "6/8/2020"
     }
   ]
 }

@@ -1,0 +1,84 @@
+.comment {
+    box-shadow: 1px 2px 5px 1px rgb(167, 198, 223);
+    display: flex;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    background-color: rgba(202, 232, 249, 0.521);
+    border-radius: 2rem;
+    padding: 2rem;
+}
+
+.comment img {
+    align-self: baseline;
+    margin-right: 2rem;
+    margin-top: 0rem;
+    width: 4.5rem;
+    height: 4.5rem;
+}
+
+.comment-text {
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+
+}
+
+.comment-text p {
+    margin: 0rem;
+    margin-bottom: 1rem;
+}
+.date {
+    font-size: 0.7rem;
+}
+
+#comment-user{
+    margin-top: 3em;
+    box-shadow: 1px 2px 5px 1px rgb(167, 198, 223);
+    border-style: none;
+    background-color: rgba(202, 232, 249, 0.521);
+    margin-bottom: 1rem;
+    width: 20%;
+    align-self: center;
+    margin-right: 15rem;
+    border-radius: 0.7rem;
+    height: 2rem;
+    padding-left: 2rem;
+}
+
+#comment-user::placeholder{
+    color: rgb(77, 178, 233);
+    font-size: larger;
+    letter-spacing: 0.2rem;
+}
+
+.textarea-container {
+    position: relative;
+}
+
+#comment-textarea{
+    padding: 2rem;
+
+    border-style: none;
+    border-radius: 0.7rem;
+    background-color: rgba(202, 232, 249, 0.521);
+    width: 27rem;
+    height: 5rem;
+    margin-bottom: 2rem;
+    box-shadow: 1px 2px 5px 1px rgb(167, 198, 223);
+
+    align-self: center;
+}
+
+.post .fa-w-14 {
+    margin: 0px;
+    position: absolute;
+    left: 0;
+    top: 6.8rem;
+    left: 28.8rem;
+    font-size: 2rem;
+    color:rgb(77, 178, 233)
+}
+.post .fa-w-14:hover{
+    cursor: pointer;
+    color:rgba(77, 178, 233, 0.76)
+}

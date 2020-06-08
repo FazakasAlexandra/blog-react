@@ -33,6 +33,29 @@ export class FetchApi {
     return responseJson
   }
 
+  async getComments(postId) {
+    const response = await fetch(`${this.baseUrl}/posts/${postId}/comments`,
+    {
+      method: 'GET',
+      headers: {'Content-Type' : 'application/json'}
+    });
+    const responseJson = await response.json()
+
+    return responseJson
+  }
+
+  async newComment(postId, comment) {
+    const response = await fetch(`${this.baseUrl}/posts/${postId}/comments`, 
+    {
+      method: 'POST',
+      headers: {'Content-Type' : 'application/json'},
+      body: JSON.stringify(comment)
+    })
+    const responseJson = await response.json()
+
+    return responseJson
+  }
+
   deletePost(id) {
     fetch(`${this.baseUrl}/posts/${id}`, {
       method: 'DELETE',

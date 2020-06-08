@@ -1,5 +1,4 @@
 import React from 'react'
-import './postForm.css'
 
 export class PostForm extends React.Component {
     constructor(props) {
