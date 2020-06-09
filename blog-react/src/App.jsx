@@ -183,7 +183,7 @@ class App extends React.Component {
           <NavBar
             homeClickEvent={this.handleHomeSection = () => { this.setState({ currentPage: 'home.html' }) }}
             accountClickEvent={this.handleAccountSection = () => { this.setState({ currentPage: 'account.html' }) }}
-            singInClickEvent={this.handleSingInSection = () => { this.setState({ currentPage: 'sing-in.html' }) }}
+            singInClickEvent={this.handleSingInSection = () => { this.setState({ currentPage: 'sign-in.html' }) }}
             signOutClickEvent={this.handleSingOut}
             isLoggedIn={this.state.isAuth}
           />

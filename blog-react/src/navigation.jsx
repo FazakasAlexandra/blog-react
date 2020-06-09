@@ -58,7 +58,7 @@ function choseComponent(self) {
           ></Post>
         )
       })
-      return postComponents;
+      return postComponents
     }
 
     case 'view-post.html': {
@@ -67,14 +67,15 @@ function choseComponent(self) {
           <Post
             auth={self.state.selectedPost.author}
             post={self.state.selectedPost}
+            isAuth={self.state.isAuth}
             page={'view-post.html'}
           ></Post>
         </div>
       )
     }
 
-    case 'sing-in.html': {
-      return <SignInForm singIn={self.handleSingIn} />
+    case 'sign-in.html': {
+      return <SignInForm signIn={self.handleSingIn} />
     }
 
     case 'account.html': {

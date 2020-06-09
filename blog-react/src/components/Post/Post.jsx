@@ -64,8 +64,8 @@ export class Post extends React.Component {
   }
 
   choseTextLength(){
-    let homePageText = <p>{this.props.post.text.substring(0, 100)}...</p>
-    let viewPageText = <p>{this.props.post.text}</p> 
+    let homePageText = <p className='post-text'>{this.props.post.text.substring(0, 100)}...</p>
+    let viewPageText = <p className='post-text-view'>{this.props.post.text}</p> 
     let length;
     
     if(this.props.page === 'home.html' || this.props.page === 'delete-post.html' || this.props.page === 'edit-post.html'){
@@ -105,10 +105,12 @@ export class Post extends React.Component {
     if (this.props.page === 'view-post.html') {
       return (
         <>
+          <div className = "new-comment-section">
           {this.props.isAuth ? null : <input type="text" id ="comment-user" placeholder="Name"/>}
           <div className="textarea-container">
           <textarea id="comment-textarea"></textarea>
           <FontAwesomeIcon icon={'plus-square'} onClick={this.handleCommentClick}/>
+          </div>
           </div>
           {this.getCommentSection()}
         </>

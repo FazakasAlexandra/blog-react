@@ -1,4 +1,4 @@
-.sing-in-form-user-invalid input, .sing-in-form-pass-invalid input {
+.sign-in-form-user-invalid input, .sign-in-form-pass-invalid input {
     border: none;
     border-bottom-style: solid;
     border-bottom-color: rgba(223, 26, 0, 0.719);
@@ -7,14 +7,14 @@
     color: #5d5b59;
 }
 
-#sing-in-form-user-invalid-icon {
+#sign-in-form-user-invalid-icon {
     font-size: 1.2rem;
     z-index: +1;
     position: absolute;
     color:rgba(223, 26, 0, 0.719);
 }
 
-#sing-in-form-pass-invalid-icon {
+#sign-in-form-pass-invalid-icon {
     font-size: 1.2rem;
     z-index: +1;
     position: absolute;

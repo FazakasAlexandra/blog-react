@@ -39,10 +39,10 @@
     margin-bottom: 1rem;
     width: 20%;
     align-self: center;
-    margin-right: 15rem;
+    margin-right: 20rem;
     border-radius: 0.7rem;
     height: 2rem;
-    padding-left: 2rem;
+    padding-left: 1rem;
 }
 
 #comment-user::placeholder{
