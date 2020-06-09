@@ -56,7 +56,7 @@ export class Post extends React.Component {
       button = <button 
                  onClick={() => this.props.postDeleteClick(this.props.post)} 
                  className="delete-button">
-                <FontAwesomeIcon icon='trash-alt'/>
+                <FontAwesomeIcon icon='trash-alt' id="trash-icon"/>
                </button>
     }
 
@@ -109,7 +109,7 @@ export class Post extends React.Component {
           {this.props.isAuth ? null : <input type="text" id ="comment-user" placeholder="Name"/>}
           <div className="textarea-container">
           <textarea id="comment-textarea"></textarea>
-          <FontAwesomeIcon icon={'plus-square'} onClick={this.handleCommentClick}/>
+          <FontAwesomeIcon icon={'plus-square'} id="add-comment-icon" onClick={this.handleCommentClick}/>
           </div>
           </div>
           {this.getCommentSection()}
