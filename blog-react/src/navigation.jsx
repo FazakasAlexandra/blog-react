@@ -5,6 +5,33 @@ import { NewPostForm } from './components/Forms/NewPostForm/NewPostForm'
 import { EditPostForm } from './components/Forms/EditPostForm/EditPostForm'
 import React from 'react'
 
+function getPostComponents(self, posts, page){
+  const postComponents = posts.filter((post)=>{
+    if(self.state.search === null){
+      return post
+    } else if(post.title.toLowerCase().includes(self.state.search.toLowerCase()) || post.text.toLowerCase().includes(self.state.search.toLowerCase())){
+      return post
+    }
+  }).map(post => {
+    return (
+      <Post
+        page={page}
+        auth={post.author}
+        key={post.id}
+        post={post}
+        isAuth={self.state.isAuth}
+        // changes current page into 'view-post.html'
+        postViewClick={self.handleViewBttn}
+        postEditClick={self.displayEditForm}
+        postDeleteClick={self.handleDeletePost}
+        editMode={self.state.editPostMode}
+        deleteMode={self.state.deletePostMode}
+      ></Post>
+    )
+  })
+  return postComponents
+}
+
 function choseClassName(state) {
   let className = ""
 
@@ -44,20 +71,10 @@ function choseClassName(state) {
 function choseComponent(self) {
   switch (self.state.currentPage) {
     case 'home.html': {
+      
       self.defaultModes()
       const posts = self.state.posts
-      const postComponents = posts.map(post => {
-        return (
-          <Post
-            page={'home.html'}
-            auth={post.author}
-            key={post.id}
-            post={post}
-            // changes current page into 'view-post.html'
-            postViewClick={self.handleViewBttn}
-          ></Post>
-        )
-      })
+      const postComponents = getPostComponents(self,posts,'home.html')
       return postComponents
     }
 
@@ -99,18 +116,7 @@ function choseComponent(self) {
 
     case 'edit-post.html': {
       const posts = self.state.posts
-      const postComponents = posts.map(post => {
-        return (
-          <Post
-            auth={post.author}
-            key={post.id}
-            post={post}
-            postEditClick={self.displayEditForm}
-            page={'edit-post.html'}
-            editMode={self.state.editPostMode}
-          ></Post>
-        )
-      })
+      const postComponents = getPostComponents(self, posts, 'edit-post.html')
       return postComponents;
     }
 
@@ -129,18 +135,7 @@ function choseComponent(self) {
 
     case 'delete-post.html': {
       const posts = self.state.posts
-      const postComponents = posts.map(post => {
-        return (
-          <Post
-            key={post.id}
-            post={post}
-            postDeleteClick={self.handleDeletePost}
-            auth={post.author}
-            page={'delete-post.html'}
-            deleteMode={self.state.deletePostMode}
-          ></Post>
-        )
-      })
+      const postComponents = getPostComponents(self, posts, 'delete-post.html')
       return postComponents;
     }
   }

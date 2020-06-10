@@ -29,6 +29,7 @@ class App extends React.Component {
     super();
     this.state = {
       posts: [],
+      search: null,
       isAuth: false,
       editPostMode: false,
       deletePostMode: false,
@@ -83,6 +84,9 @@ class App extends React.Component {
 
   handleAccDeletePost = () => {
     this.setState({ deletePostMode: true, currentPage: "delete-post.html"})
+    if(this.state.editPostMode){
+      this.setState({editPostMode:false})
+    }
   }
 
 
@@ -171,6 +175,12 @@ class App extends React.Component {
     return className
   }
 
+  search=(event)=>{
+    let keyword = event.target.value;
+    this.setState({search:keyword})
+    console.log(this.state.search)
+  }
+
   renderView() {
     let view = choseComponent(this)
     return view
@@ -181,11 +191,13 @@ class App extends React.Component {
       <React.Fragment>
         <React.Fragment>
           <NavBar
+            page ={this.state.currentPage}
             homeClickEvent={this.handleHomeSection = () => { this.setState({ currentPage: 'home.html' }) }}
             accountClickEvent={this.handleAccountSection = () => { this.setState({ currentPage: 'account.html' }) }}
             singInClickEvent={this.handleSingInSection = () => { this.setState({ currentPage: 'sign-in.html' }) }}
             signOutClickEvent={this.handleSingOut}
             isLoggedIn={this.state.isAuth}
+            search={this.search}
           />
         </React.Fragment>
         <div className={this.choseMainSectionClass()}>
