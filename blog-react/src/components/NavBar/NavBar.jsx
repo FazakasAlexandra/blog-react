@@ -37,7 +37,7 @@ export class NavBar extends React.Component{
             return (
             <div id='li-wraper-small' style={style}>
                 <li id="one" onClick={() => this.props.homeClickEvent()}>Home</li>
-                <li id="two"><span>About</span></li>
+                <li id="two" onClick={()=> this.props.aboutClickEvent()}>About</li>
                 <li id="three" onClick={() => accountClickEvent()}><span>{this.props.isLoggedIn ? 'Account' : 'Sign in'}</span></li>
                 <li id="four" onClick={() => this.props.signOutClickEvent()}><span>{this.props.isLoggedIn ? 'Sign out' : null}</span></li>
                 {this.showSeachBar()}
@@ -55,7 +55,7 @@ export class NavBar extends React.Component{
                 <ul className='nav-bar' style={this.props.page === 'account.html' ? { paddingBottom: '0.9rem' } : null}>
                     <div id='li-wraper'>
                         <li id="one" onClick={() => this.props.homeClickEvent()}><FontAwesomeIcon icon="home" /><span> Home</span></li>
-                        <li id="two"><span>About</span></li>
+                        <li id="two" onClick={()=> this.props.aboutClickEvent()}><span>About</span></li>
                         <li id="three" onClick={() => accountClickEvent()}><span>{this.props.isLoggedIn ? account : 'Sign in'}</span></li>
                         {this.showSeachBar()}
                         <li id="four" onClick={() => this.props.signOutClickEvent()}><span>{this.props.isLoggedIn ? 'Sign out' : null}</span></li>

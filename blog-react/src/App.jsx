@@ -5,6 +5,11 @@ import { NavBar } from './components/NavBar/NavBar'
 import { Footer } from './components/Footer/Footer'
 import { choseClassName, choseComponent } from './navigation.jsx'
 
+window.addEventListener('popstate', (event) => {
+  console.log(event.state)
+  //this.setState({currentPage:event.state.page})
+});
+
 function userSignedIn() {
   let localName = localStorage.getItem("name")
   let localPassword = localStorage.getItem("password")
@@ -51,7 +56,7 @@ class App extends React.Component {
 
 
   // handlers for sign in / sign out
-  async componentDidMount() {
+  componentDidMount = async() => {
     const fetchApi = new FetchApi('http://localhost:3000');
     const posts = await fetchApi.getPosts();
     console.log(posts);
@@ -192,9 +197,10 @@ class App extends React.Component {
         <React.Fragment>
           <NavBar
             page ={this.state.currentPage}
-            homeClickEvent={this.handleHomeSection = () => { this.setState({ currentPage: 'home.html' }) }}
-            accountClickEvent={this.handleAccountSection = () => { this.setState({ currentPage: 'account.html' }) }}
-            singInClickEvent={this.handleSingInSection = () => { this.setState({ currentPage: 'sign-in.html' }) }}
+            homeClickEvent={ () => this.setState({ currentPage: 'home.html' }) }
+            aboutClickEvent={ () => this.setState({ currentPage: 'about.html' }) }
+            accountClickEvent={ () => this.setState({ currentPage: 'account.html' }) }
+            singInClickEvent={ () => this.setState({ currentPage: 'sign-in.html' }) }
             signOutClickEvent={this.handleSingOut}
             isLoggedIn={this.state.isAuth}
             search={this.search}

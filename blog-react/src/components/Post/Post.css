@@ -23,6 +23,7 @@ h3{
 .post p {
   padding-left: 1rem;
   padding-right: 1rem;
+  color:#5d5b59;
 }
 
 .posts, .posts-delete, .posts-edit{

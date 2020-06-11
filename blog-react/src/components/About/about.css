@@ -1,0 +1,23 @@
+*{
+    font-family: sans-serif;
+    line-height: 1.6;
+    letter-spacing: 0.02rem;
+   }
+
+.about {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+}
+
+.about img {
+    margin: 0 auto;
+}
+
+.about h3{
+    align-self: center;
+}
+
+.about p{
+    color:#5d5b59;
+}

@@ -1,6 +1,7 @@
 import { Post } from './components/Post/Post';
 import { SignInForm } from './components/Forms/SignInForm/SignInForm'
 import { Account } from './components/Account/Account'
+import { About } from './components/About/About'
 import { NewPostForm } from './components/Forms/NewPostForm/NewPostForm'
 import { EditPostForm } from './components/Forms/EditPostForm/EditPostForm'
 import React from 'react'
@@ -69,16 +70,20 @@ function choseClassName(state) {
 
 
 function choseComponent(self) {
+
   switch (self.state.currentPage) {
+
     case 'home.html': {
-      
+      pushState('home.html')
       self.defaultModes()
+      window.history.pushState({page:'home.html'}, 'home','/home.html')
       const posts = self.state.posts
       const postComponents = getPostComponents(self,posts,'home.html')
       return postComponents
     }
 
     case 'view-post.html': {
+      window.history.pushState('view', 'view',`/view-post-${self.state.selectedPost.id}.html`)
       return (
         <div>
           <Post
@@ -92,10 +97,12 @@ function choseComponent(self) {
     }
 
     case 'sign-in.html': {
+      pushState('sign-in.html')
       return <SignInForm signIn={self.handleSingIn} />
     }
 
     case 'account.html': {
+      pushState('account.html')
       return (
         <Account
           // newPostMode -> true
@@ -108,6 +115,7 @@ function choseComponent(self) {
     }
 
     case 'new-post.html': {
+      pushState('new-post.html')
       return (<NewPostForm 
                postNewClick={self.handleNewPost} 
                buttonName = {'Post'}
@@ -115,13 +123,15 @@ function choseComponent(self) {
     }
 
     case 'edit-post.html': {
+      pushState('edit-post.html')
       const posts = self.state.posts
       const postComponents = getPostComponents(self, posts, 'edit-post.html')
       return postComponents;
     }
 
-    case `edit-post-form.html`: {
+    case 'edit-post-form.html': {
       let { selectedPost : post} = self.state
+      window.history.pushState({page:'edit-post-form.html'}, null , `/edit-post-${post.id}.html`)
       return (
         <EditPostForm
           title = {post.title}
@@ -134,12 +144,23 @@ function choseComponent(self) {
     }
 
     case 'delete-post.html': {
+      pushState('delete-post.html')
+
       const posts = self.state.posts
       const postComponents = getPostComponents(self, posts, 'delete-post.html')
       return postComponents;
     }
-  }
 
+    case 'about.html': 
+      window.history.pushState({page:'about.html'}, null ,'/about.html')
+
+       return <About/>
+
+  }
+}
+
+function pushState(pageName){
+  window.history.pushState({page:pageName}, null ,`/${pageName}`)
 }
 
 export { choseClassName, choseComponent }
