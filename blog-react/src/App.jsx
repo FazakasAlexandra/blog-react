@@ -5,11 +5,6 @@ import { NavBar } from './components/NavBar/NavBar'
 import { Footer } from './components/Footer/Footer'
 import { choseClassName, choseComponent } from './navigation.jsx'
 
-window.addEventListener('popstate', (event) => {
-  console.log(event.state)
-  //this.setState({currentPage:event.state.page})
-});
-
 function userSignedIn() {
   let localName = localStorage.getItem("name")
   let localPassword = localStorage.getItem("password")

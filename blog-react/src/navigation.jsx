@@ -6,6 +6,14 @@ import { NewPostForm } from './components/Forms/NewPostForm/NewPostForm'
 import { EditPostForm } from './components/Forms/EditPostForm/EditPostForm'
 import React from 'react'
 
+function popState(self) {
+  window.addEventListener('popstate', (event) => {
+    console.log(event.state)
+    self.setState({currentPage:event.state.page})
+    console.log(self.state.currentPage)
+  });
+}
+
 function getPostComponents(self, posts, page){
   const postComponents = posts.filter((post)=>{
     if(self.state.search === null){
@@ -75,6 +83,7 @@ function choseComponent(self) {
 
     case 'home.html': {
       pushState('home.html')
+      popState(self)
       self.defaultModes()
       window.history.pushState({page:'home.html'}, 'home','/home.html')
       const posts = self.state.posts
@@ -98,11 +107,13 @@ function choseComponent(self) {
 
     case 'sign-in.html': {
       pushState('sign-in.html')
+      popState(self)
       return <SignInForm signIn={self.handleSingIn} />
     }
 
     case 'account.html': {
       pushState('account.html')
+      popState(self)
       return (
         <Account
           // newPostMode -> true
@@ -116,6 +127,7 @@ function choseComponent(self) {
 
     case 'new-post.html': {
       pushState('new-post.html')
+      popState(self)
       return (<NewPostForm 
                postNewClick={self.handleNewPost} 
                buttonName = {'Post'}
@@ -124,6 +136,7 @@ function choseComponent(self) {
 
     case 'edit-post.html': {
       pushState('edit-post.html')
+      popState(self)
       const posts = self.state.posts
       const postComponents = getPostComponents(self, posts, 'edit-post.html')
       return postComponents;
@@ -145,6 +158,7 @@ function choseComponent(self) {
 
     case 'delete-post.html': {
       pushState('delete-post.html')
+      popState(self)
 
       const posts = self.state.posts
       const postComponents = getPostComponents(self, posts, 'delete-post.html')
