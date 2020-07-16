@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/blog-react/static/css/main.701d4be5.chunk.css",
+    "main.js": "/blog-react/static/js/main.3a1a9562.chunk.js",
+    "main.js.map": "/blog-react/static/js/main.3a1a9562.chunk.js.map",
+    "runtime-main.js": "/blog-react/static/js/runtime-main.6305386b.js",
+    "runtime-main.js.map": "/blog-react/static/js/runtime-main.6305386b.js.map",
+    "static/js/2.2dde3deb.chunk.js": "/blog-react/static/js/2.2dde3deb.chunk.js",
+    "static/js/2.2dde3deb.chunk.js.map": "/blog-react/static/js/2.2dde3deb.chunk.js.map",
+    "index.html": "/blog-react/index.html",
+    "precache-manifest.0a1b7ccde277918a2e7ffad6c3777e9a.js": "/blog-react/precache-manifest.0a1b7ccde277918a2e7ffad6c3777e9a.js",
+    "service-worker.js": "/blog-react/service-worker.js",
+    "static/css/main.701d4be5.chunk.css.map": "/blog-react/static/css/main.701d4be5.chunk.css.map",
+    "static/js/2.2dde3deb.chunk.js.LICENSE.txt": "/blog-react/static/js/2.2dde3deb.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6305386b.js",
+    "static/js/2.2dde3deb.chunk.js",
+    "static/css/main.701d4be5.chunk.css",
+    "static/js/main.3a1a9562.chunk.js"
+  ]
+}
