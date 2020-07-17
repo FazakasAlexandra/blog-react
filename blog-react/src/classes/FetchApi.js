@@ -4,6 +4,7 @@ export class FetchApi {
   }
 
   async getPosts() {
+    console.log(this.baseUrl)
     const response = await fetch(this.baseUrl + '/posts', { method: 'GET' });
     const postsJson = await response.json(); // {id, title ...}[]
 
