@@ -52,7 +52,7 @@ class App extends React.Component {
 
   // handlers for sign in / sign out
   componentDidMount = async() => {
-    const fetchApi = new FetchApi('http://https://rocky-castle-37513.herokuapp.com');
+    const fetchApi = new FetchApi('https://rocky-castle-37513.herokuapp.com');
     const posts = await fetchApi.getPosts();
     console.log(posts);
     this.setState({ posts: posts })
@@ -101,7 +101,7 @@ class App extends React.Component {
   handleNewPost = async (post) => {
     console.log('post button clicked')
     console.log(post)
-    const fetchApi = new FetchApi('http://https://rocky-castle-37513.herokuapp.com');
+    const fetchApi = new FetchApi('https://rocky-castle-37513.herokuapp.com');
     const newPost = await fetchApi.newPost(post);
     console.log(newPost)
     this.displayNewPost(newPost)
@@ -131,7 +131,7 @@ class App extends React.Component {
 
   handleEditPost = async (editedPost, id) => {
     console.log(editedPost, this.state.selectedPost.id)
-    let fetchApi = new FetchApi('http://https://rocky-castle-37513.herokuapp.com')
+    let fetchApi = new FetchApi('https://rocky-castle-37513.herokuapp.com')
     let response = await fetchApi.editPost(editedPost, this.state.selectedPost.id)
     console.log(response)
     this.displayEditedPost(response)
@@ -164,7 +164,7 @@ class App extends React.Component {
   }
 
   deletePost(postId) {
-    const fetchApi = new FetchApi('http://https://rocky-castle-37513.herokuapp.com');
+    const fetchApi = new FetchApi('https://rocky-castle-37513.herokuapp.com');
     fetchApi.deletePost(postId);
   }
 
